@@ -1449,7 +1449,7 @@ public class SubsamplingScaleImageView extends View {
         }
 
         int isNeedAdd;
-        if (scale * getSHeight() > getHeight()) {
+        if (scale * getSHeight() >= getHeight() - statusHeight) {
             isNeedAdd = freePaddingTop;
         } else {
             isNeedAdd = 0;
@@ -1462,8 +1462,9 @@ public class SubsamplingScaleImageView extends View {
     }
 
     private int freePaddingTop;
+    private int statusHeight;
 
-    public void setFreePaddingTop(int freePaddingTop) {
+    public void setFreePaddingTop(int freePaddingTop, int statusHeight) {
         this.freePaddingTop = freePaddingTop;
     }
 
