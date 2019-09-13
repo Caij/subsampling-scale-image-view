@@ -31,6 +31,7 @@ public class BasicFeaturesActivity extends AbstractPagesActivity {
         super.onCreate(savedInstanceState);
         SubsamplingScaleImageView view = findViewById(id.imageView);
         view.setImage(ImageSource.asset("sanmartino.jpg"));
+        view.setFreePaddingTop(56);
     }
 
 }
