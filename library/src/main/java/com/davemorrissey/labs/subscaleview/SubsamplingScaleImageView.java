@@ -1449,9 +1449,15 @@ public class SubsamplingScaleImageView extends View {
         }
 
         vTranslate.x = Math.min(vTranslate.x, maxTx);
-        vTranslate.y = Math.min(vTranslate.y, maxTy);
+        vTranslate.y = Math.min(vTranslate.y, maxTy + (panLimit == PAN_LIMIT_INSIDE ? freePaddingTop : 0));
 
         sat.scale = scale;
+    }
+
+    private int freePaddingTop;
+
+    public void setFreePaddingTop(int freePaddingTop) {
+        this.freePaddingTop = freePaddingTop;
     }
 
     /**
